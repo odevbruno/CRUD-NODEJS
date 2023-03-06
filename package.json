@@ -1,0 +1,24 @@
+{
+  "name": "multi-db",
+  "version": "1.0.0",
+  "description": "docker run \\     --name postgres \\     -e POSTGRES_USER=brcodes \\     -e POSTGRES_PASSWORD=senhacodes \\     -e POSTGRES_DB=heroes \\     -p 4040:4040 \\     -d \\     postgres",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index",
+    "start": "node ./src/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.10.0",
+    "pg": "^8.9.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^4.44.4"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}
