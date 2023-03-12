@@ -2,7 +2,7 @@ const assert = require('assert');
 const ContextStrategy = require('../db/strategies/base/ContextStrategy');
 const Postgres = require('../db/Postgres');
 const { deepEqual } = require('assert');
-const heroiSchema = require('../db/strategies/postgres/heroisSchema');
+const heroiSchema = require('../db/strategies/postgres/schemas/heroisSchema');
 
 const NEW_HEROI = { "nome": "Itachi", "poder": "OVERPOWER" };
 const NEW_HEROI_FOR_UPDATE = { "nome": "MELIODAS", "poder": "DARKNESS" };
@@ -21,7 +21,7 @@ describe('TESTING MODULES POSTGRES DB', async function () {
         // await postgresDB.create(NEW_HEROI_FOR_UPDATE);
     })
 
-    it.only('Connection POSTGRES...', async function () {
+    it('Connection POSTGRES...', async function () {
         const res = await postgresDB.isConnected();
         assert.deepEqual(res, true);
     });
@@ -34,6 +34,7 @@ describe('TESTING MODULES POSTGRES DB', async function () {
 
     it('Testing READ ALL TABLE in POSTGRES', async function () {
         const res = await postgresDB.read();
+        console.log(res)
         assert.ok(res);
     });
 
